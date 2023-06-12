@@ -25,7 +25,7 @@ void testSequence() {
     int index;
     T value;
 
-    cout << "Choose sequence type:" << endl;
+    cout << "Choose:" << endl;
     cout << "1. LinkedListSequence" << endl;
     cout << "2. ArraySequence" << endl;
     cout << "3. AutoTest" << endl;
