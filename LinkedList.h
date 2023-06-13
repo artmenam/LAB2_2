@@ -174,7 +174,7 @@ public:
 
     void RemoveAt(int index) {
         if (index < 0 || index >= this->size) {
-            throw std::out_of_range("Index out of range");
+            throw out_of_range("Index out of range");
         }
 
         if (index == 0) {
