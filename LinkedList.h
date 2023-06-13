@@ -210,7 +210,7 @@ public:
             current = current->next;
             index++;
         }
-        throw std::invalid_argument("Not found");
+        throw invalid_argument("Not found");
     }
 
     T& operator[](int index) {
