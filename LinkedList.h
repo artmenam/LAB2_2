@@ -172,6 +172,47 @@ public:
         }
     }
 
+    void RemoveAt(int index) {
+        if (index < 0 || index >= this->size) {
+            throw std::out_of_range("Index out of range");
+        }
+
+        if (index == 0) {
+            // Удаляем голову списка
+            Node* current = this->head;
+            this->head = this->head->next;
+            delete current;
+        } else {
+            Node* current = this->head;
+            Node* previous = nullptr;
+
+            // Доходим до элемента, который нужно удалить
+            for (int i = 0; i < index; i++) {
+                previous = current;
+                current = current->next;
+            }
+
+            previous->next = current->next;
+            delete current;
+        }
+
+        this->size--;
+    }
+
+    void Remove(T data) {
+        Node* current = this->head;
+        int index = 0;
+        while (current != nullptr) {
+            if (current->data == data) {
+                this->RemoveAt(index);
+                return;
+            }
+            current = current->next;
+            index++;
+        }
+        throw std::invalid_argument("Not found");
+    }
+
     T& operator[](int index) {
         return this->GetLinkedListItem(index);
     }

@@ -59,6 +59,10 @@ void testSequence() {
         cout << "4. Prepend" << endl;
         cout << "5. Insert at" << endl;
         cout << "6. Map (multiply by 2)" << endl;
+        cout << "7. Get first" << endl;
+        cout << "8. Get last" << endl;
+        cout << "9. Remove by index" << endl;
+        cout << "10. Remove by value" << endl;
         cout << "0. Exit" << endl;
         cin >> choice;
 
@@ -113,6 +117,24 @@ void testSequence() {
             case 6:
                 sequence->Map([](T value) { return value * 2; });
                 cout << "Array after map: ";
+                printSequence(sequence);
+                break;
+            case 7:
+                cout << "First element: " << sequence->GetFirst() << endl;
+                break;
+            case 8:
+                cout << "Last element: " << sequence->GetLast() << endl;
+                break;
+            case 9:
+                cout << "Enter index: ";
+                cin >> index;
+                sequence->RemoveAt(index);
+                printSequence(sequence);
+                break;
+            case 10:
+                cout << "Enter value: ";
+                cin >> value;
+                sequence->Remove(value);
                 printSequence(sequence);
                 break;
             case 0:

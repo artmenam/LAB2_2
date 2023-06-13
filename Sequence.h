@@ -18,6 +18,8 @@ public:
     virtual void Append(T) = 0;
     virtual void Prepend(T) = 0;
     virtual void InsertAt(T, int) = 0;
+    virtual void RemoveAt(int) = 0;
+    virtual void Remove(T) = 0;
 
 
     virtual void Map(T(func)(T)) = 0;

@@ -208,6 +208,27 @@ public:
         size++;
     }
 
+    void RemoveAt(int index) {
+        if (index >= this->size || index < 0) {
+            throw out_of_range("Index out of range");
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+
+        this->size--;
+    }
+
+    void Remove(T value) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == value) {
+                RemoveAt(i);
+                i--;
+            }
+        }
+    }
+
     int *begin() {
         return arr;
     }

@@ -53,6 +53,14 @@ public:
         return this->buffer->GetSize();
     }
 
+    void RemoveAt(int index) override {
+        this->buffer->RemoveAt(index);
+    }
+
+    void Remove(T item) override {
+        this->buffer->Remove(item);
+    }
+
     T& operator[](int index) override {
         return (*this->buffer)[index];
     }
